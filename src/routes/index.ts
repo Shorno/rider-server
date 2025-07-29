@@ -1,0 +1,37 @@
+import {Router} from "express";
+import {AuthRoutes} from "../modules/auth/auth.route";
+import {UserRoutes} from "../modules/user/user.route";
+import {DriverRoutes} from "../modules/driver/driver.route";
+import {AdminRoutes} from "../modules/admin/admin.route";
+
+
+export const router = Router();
+
+// Add debugging middleware
+router.use((req, res, next) => {
+    console.log(`Main router hit: ${req.method} ${req.originalUrl}`);
+    next();
+});
+
+const moduleRoutes = [
+    {
+        path: "/auth",
+        route: AuthRoutes
+    },
+    {
+        path:  "/user",
+        route: UserRoutes
+    },
+    {
+        path: "/driver",
+        route: DriverRoutes
+    },
+    {
+        path: "/admin",
+        route: AdminRoutes
+    }
+]
+
+moduleRoutes.forEach((route) => {
+    router.use(route.path, route.route);
+})
