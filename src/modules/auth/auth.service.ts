@@ -14,7 +14,7 @@ export const credentialsLoginService = async (payload: Partial<IUser>) => {
         throw new AppError(httpStatus.BAD_REQUEST, 'Email and password are required fields.');
     }
 
-    const existingUser = await User.findOne({email}).select('+password');
+    const existingUser = await User.findOne({email}).select("+password")
 
     if (!existingUser) {
         throw new AppError(httpStatus.BAD_REQUEST, 'User does not exist with this email address.');
@@ -32,8 +32,10 @@ export const credentialsLoginService = async (payload: Partial<IUser>) => {
 
     const userTokens = createUserTokens(existingUser)
 
+    const {password: _, ...userWithoutPassword} = existingUser.toObject()
+
     return {
-        user: existingUser,
+        user: userWithoutPassword,
         accessToken: userTokens.accessToken,
         refreshToken: userTokens.refreshToken
     }

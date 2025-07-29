@@ -8,12 +8,8 @@ import {createUser, updateUser} from "./user.controller";
 
 const router = Router()
 
-router.use((req, res, next) => {
-    console.log(`User route hit: ${req.method} ${req.path}`);
-    next();
-});
-
 router.post("/signup", validateRequest(createUserZodSchema), createUser)
+router.post("/login", checkAuth(...Object.values(Role.RIDER)), createUser)
 router.patch("/:userId", checkAuth(...Object.values(Role)), updateUser)
 
 

@@ -7,12 +7,6 @@ import {AdminRoutes} from "../modules/admin/admin.route";
 
 export const router = Router();
 
-// Add debugging middleware
-router.use((req, res, next) => {
-    console.log(`Main router hit: ${req.method} ${req.originalUrl}`);
-    next();
-});
-
 const moduleRoutes = [
     {
         path: "/auth",

@@ -7,8 +7,6 @@ import User from "../modules/user/user.model";
 
 export const checkAuth = (...authRoles: string[]) => async (req: Request, res: Response, next: NextFunction) => {
     const accessToken = req.headers.authorization;
-
-
     if (!accessToken) {
         return next(new AppError(
             httpStatus.UNAUTHORIZED,

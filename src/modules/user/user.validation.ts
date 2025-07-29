@@ -16,4 +16,3 @@ export const createUserZodSchema = z.object({
 });
 
 export type CreateUserInput = z.infer<typeof createUserZodSchema>;
-

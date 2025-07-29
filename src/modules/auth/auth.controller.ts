@@ -6,7 +6,6 @@ import {setAuthCookie} from "../../utils/setCookie";
 import AppError from "../../errorHelpers/AppError";
 
 export const credentialsLogin = catchAsync(async (req, res, next) => {
-
     const loginInfo = await credentialsLoginService(req.body)
 
     setAuthCookie(res, loginInfo)

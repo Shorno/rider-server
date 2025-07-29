@@ -1,17 +1,28 @@
 import express, {Application, Request, Response} from "express";
 import cors from "cors"
 import cookieParser from "cookie-parser";
+import swaggerUi from "swagger-ui-express";
 import {isMongoConnected} from "./config/mongoose";
 import {env} from "./config/env";
 import {router} from "./routes";
 import {globalErrorHandler} from "./middlewares/globalErrorHandler";
 import {notFound} from "./middlewares/notFound";
+import {swaggerSpec} from "./config/swagger";
 
 const app: Application = express()
 
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors())
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
+    explorer: true,
+    customCss: '.swagger-ui .topbar { display: none }',
+    customSiteTitle: "Rider App API Documentation",
+    swaggerOptions: {
+        persistAuthorization: true,
+    }
+}));
 
 app.get("/health", (req: Request, res: Response) => {
     const dbStatus = isMongoConnected()
@@ -46,6 +57,7 @@ app.get(["/", "/api"], (req: Request, res: Response) => {
             baseUrl,
             endpoints: {
                 health: `${baseUrl}/health`,
+                documentation: `${baseUrl}/api-docs`,
             },
         },
     }
