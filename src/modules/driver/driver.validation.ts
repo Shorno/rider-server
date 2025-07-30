@@ -27,5 +27,14 @@ export const updateDriverAvailabilitySchema = z.object({
 })
 
 
+export const getEarningsHistorySchema = z.object({
+    page: z.string().optional().transform((val) => val ? parseInt(val, 10) : 1),
+    limit: z.string().optional().transform((val) => val ? parseInt(val, 10) : 10),
+    startDate: z.string().optional().transform((val) => val ? new Date(val) : undefined),
+    endDate: z.string().optional().transform((val) => val ? new Date(val) : undefined),
+});
+
+
 export type UpdateDriverAvailabilityInput = z.infer<typeof updateDriverAvailabilitySchema>;
 export type CreateDriverInput = z.infer<typeof createDriverZodSchema>;
+export type GetEarningsHistoryInput = z.infer<typeof getEarningsHistorySchema>;

@@ -57,6 +57,9 @@ const userSchema = new Schema<IUser>({
             isApproved: {type: Boolean, default: false},
             isSuspended: {type: Boolean, default: false},
             isOnline: {type: Boolean, default: false},
+            totalEarnings: {type: Number, default: 0},
+            totalRides: {type: Number, default: 0},
+            rating: {type: Number, default: 5, min: 1, max: 5},
             currentLocation: {
                 latitude: {type: Number, min: -90, max: 90},
                 longitude: {type: Number, min: -180, max: 180}

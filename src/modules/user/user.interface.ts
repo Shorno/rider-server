@@ -6,6 +6,13 @@ export interface IDriverInfo {
     isApproved: boolean;
     isSuspended: boolean;
     isOnline: boolean;
+    totalEarnings: number;
+    totalRides: number;
+    rating: number;
+    currentLocation?: {
+        latitude: number;
+        longitude: number;
+    };
 }
 
 export interface IRiderInfo {
