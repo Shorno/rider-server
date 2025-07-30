@@ -284,6 +284,19 @@ const completeRide = async (rideId: string, driverId: string): Promise<IRide> =>
         throw new AppError(500, "Failed to complete ride");
     }
 
+    // Update driver's totalRides and totalEarnings
+    if (updatedRide.driverId && updatedRide.fare && updatedRide.fare.totalFare) {
+        await mongoose.model('User').updateOne(
+            { _id: updatedRide.driverId },
+            {
+                $inc: {
+                    'driverInfo.totalRides': 1,
+                    'driverInfo.totalEarnings': updatedRide.fare.totalFare
+                }
+            }
+        );
+    }
+
     return updatedRide;
 };
 

@@ -1,4 +1,5 @@
 import {User} from "../user/user.model";
+import {Ride} from "../ride/ride.model";
 import httpStatus from "http-status-codes";
 import AppError from "../../errorHelpers/AppError";
 import bcrypt from "bcryptjs";
@@ -43,4 +44,16 @@ export const adminSignupService = async (payload: CreateAdminInput) => {
     return {
         user: adminWithoutPassword,
     };
+};
+
+export const getAllUsersService = async () => {
+    return User.find({ role: Role.RIDER });
+};
+
+export const getAllDriversService = async () => {
+    return User.find({ role: Role.DRIVER });
+};
+
+export const getAllRidesService = async () => {
+    return Ride.find();
 };
