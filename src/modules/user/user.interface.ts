@@ -1,46 +1,14 @@
 import mongoose from "mongoose";
-
-export enum Role {
-    ADMIN = 'admin',
-    RIDER = 'rider',
-    DRIVER = 'driver'
-}
-
-export enum VehicleType {
-    CAR = 'car',
-    BIKE = 'bike',
-    AUTO = 'auto'
-}
-
-export enum PaymentMethod {
-    CASH = 'cash',
-    CARD = 'card',
-    WALLET = 'wallet'
-}
-
-export interface ILocation {
-    latitude: number;
-    longitude: number;
-}
+import { Role, PaymentMethod, VehicleType } from "../../types/shared.types";
 
 export interface IDriverInfo {
     vehicleType: VehicleType;
-    vehicleModel: string;
-    vehiclePlate: string;
-    licenseNumber: string;
     isApproved: boolean;
     isSuspended: boolean;
     isOnline: boolean;
-    currentLocation?: ILocation;
-    totalEarnings: number;
-    totalRides: number;
-    rating: number;
-    currentRideId?: mongoose.Types.ObjectId;
 }
 
 export interface IRiderInfo {
-    totalRides: number;
-    currentRideId?: mongoose.Types.ObjectId;
     cancelCount: number;
     lastCancelDate?: Date;
     preferredPaymentMethod: PaymentMethod;

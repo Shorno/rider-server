@@ -4,10 +4,10 @@ import AppError from "../../errorHelpers/AppError";
 import bcrypt from "bcryptjs";
 import {CreateAdminInput} from "./admin.validation";
 import {env} from "../../config/env";
-import {Role} from "../user/user.interface";
+import {Role} from "../../types/shared.types";
 
 export const adminSignupService = async (payload: CreateAdminInput) => {
-    const {name, email, password, phone, adminToken, permissions} = payload;
+    const {name, email, password, phone, adminToken} = payload;
 
     if (adminToken !== env.ADMIN_TOKEN) {
         throw new AppError(httpStatus.UNAUTHORIZED, 'Invalid admin token.');
@@ -33,10 +33,6 @@ export const adminSignupService = async (payload: CreateAdminInput) => {
         role: Role.ADMIN,
         isActive: true,
         isBlocked: false,
-        adminInfo: {
-            permissions,
-            lastLogin: new Date()
-        }
     };
 
     const newAdmin = await User.create(adminData);

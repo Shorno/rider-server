@@ -10,7 +10,6 @@ export const createAdminZodSchema = z.object({
     phone: z.string({error: "Phone number is required"})
         .regex(/^[0-9]{10,15}$/, {message: "Please enter a valid phone number"}),
     adminToken: z.string({error: "Admin token is required"}),
-    permissions: z.array(z.string()).min(1, {message: "At least one permission is required"}),
 });
 
 export type CreateAdminInput = z.infer<typeof createAdminZodSchema>;

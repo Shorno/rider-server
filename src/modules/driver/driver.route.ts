@@ -1,7 +1,9 @@
 import {Router} from "express";
 import {validateRequest} from "../../middlewares/validateRequest";
-import {createDriverZodSchema} from "./driver.validation";
-import {createDriver, getAllDrivers} from "./driver.controller";
+import {createDriverZodSchema, updateDriverAvailabilitySchema} from "./driver.validation";
+import {createDriver, updateDriverAvailability} from "./driver.controller";
+import {checkAuth} from "../../middlewares/checkAuth";
+import {Role} from "../../types/shared.types";
 
 const router = Router()
 
@@ -11,6 +13,6 @@ router.use((req, res, next) => {
 });
 
 router.post("/signup", validateRequest(createDriverZodSchema), createDriver)
-router.get("/", getAllDrivers)
+router.patch("/availability", validateRequest(updateDriverAvailabilitySchema), checkAuth(Role.DRIVER), updateDriverAvailability)
 
 export const DriverRoutes = router;

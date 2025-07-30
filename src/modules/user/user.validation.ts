@@ -1,5 +1,5 @@
 import {z} from "zod";
-import {Role} from "./user.interface";
+import {Role} from "../../types/shared.types";
 
 export const createUserZodSchema = z.object({
     name: z.string({error: "Name is required"})

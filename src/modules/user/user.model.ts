@@ -1,5 +1,6 @@
 import mongoose, {Schema} from 'mongoose';
-import {IUser, PaymentMethod, Role, VehicleType} from "./user.interface";
+import { IUser } from "./user.interface";
+import { Role, PaymentMethod, VehicleType } from "../../types/shared.types";
 
 
 const userSchema = new Schema<IUser>({
@@ -53,9 +54,6 @@ const userSchema = new Schema<IUser>({
     driverInfo: {
         type: {
             vehicleType: {type: String, enum: Object.values(VehicleType)},
-            vehicleModel: {type: String},
-            vehiclePlate: {type: String, unique: true, sparse: true},
-            licenseNumber: {type: String, unique: true, sparse: true},
             isApproved: {type: Boolean, default: false},
             isSuspended: {type: Boolean, default: false},
             isOnline: {type: Boolean, default: false},
@@ -63,29 +61,15 @@ const userSchema = new Schema<IUser>({
                 latitude: {type: Number, min: -90, max: 90},
                 longitude: {type: Number, min: -180, max: 180}
             },
-            totalEarnings: {type: Number, default: 0},
-            totalRides: {type: Number, default: 0},
-            rating: {type: Number, min: 1, max: 5},
-            currentRideId: {type: Schema.Types.ObjectId, ref: 'Ride', default: null},
         },
         _id: false
     },
 
     riderInfo: {
         type: {
-            totalRides: {type: Number, default: 0},
-            currentRideId: {type: Schema.Types.ObjectId, ref: 'Ride', default: null},
             cancelCount: {type: Number, default: 0},
             lastCancelDate: {type: Date},
             preferredPaymentMethod: {type: String, enum: Object.values(PaymentMethod), default: PaymentMethod.CASH}
-        },
-        _id: false
-    },
-
-    adminInfo: {
-        type: {
-            permissions: [{type: String}],
-            lastLogin: {type: Date}
         },
         _id: false
     }
@@ -93,9 +77,19 @@ const userSchema = new Schema<IUser>({
     timestamps: true
 });
 
-userSchema.index({ email: 1 }, { name: 'idx_user_email', unique: true });
-userSchema.index({ phone: 1 }, { name: 'idx_user_phone', unique: true });
-userSchema.index({ role: 1 }, { name: 'idx_user_role' });
+userSchema.index({ email: 1 }, { unique: true });
+userSchema.index({ phone: 1 }, { unique: true });
+userSchema.index({ role: 1 });
+
+userSchema.index({
+    role: 1,
+    'driverInfo.isOnline': 1,
+    'driverInfo.isApproved': 1
+});
+
+userSchema.index({
+    'driverInfo.isOnline': 1
+});
 
 export const User = mongoose.model<IUser>('User', userSchema);
 export default User;

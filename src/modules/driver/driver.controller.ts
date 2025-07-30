@@ -1,6 +1,6 @@
 import {NextFunction, Request, Response} from 'express';
 import httpStatus from "http-status-codes"
-import {createDriverService, getAllDriversService} from "./driver.service";
+import {createDriverService, updateDriverAvailabilityService} from "./driver.service";
 import {catchAsync} from "../../utils/catchAsync";
 import {sendResponse} from "../../utils/sendResponse";
 
@@ -14,13 +14,16 @@ export const createDriver = catchAsync(async (req: Request, res: Response, next:
     })
 })
 
-export const getAllDrivers = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-    const result = await getAllDriversService();
+
+export const updateDriverAvailability = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+    const driverId = req.user.id;
+
+    const updatedDriverInfo = await updateDriverAvailabilityService(driverId, req.body);
+
     sendResponse(res, {
         statusCode: httpStatus.OK,
         success: true,
-        message: 'Drivers fetched successfully',
-        data: result.data,
-        metadata: result.metadata
-    })
+        message: `Driver availability updated successfully.`,
+        data: updatedDriverInfo
+    });
 })

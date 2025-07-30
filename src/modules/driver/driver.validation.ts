@@ -1,5 +1,5 @@
 import {z} from "zod";
-import {VehicleType} from "../user/user.interface";
+import {VehicleType} from "../../types/shared.types";
 
 export const createDriverZodSchema = z.object({
     name: z.string({error: "Name is required"})
@@ -21,4 +21,11 @@ export const createDriverZodSchema = z.object({
     isBlocked: z.boolean().optional().default(false),
 });
 
+
+export const updateDriverAvailabilitySchema = z.object({
+    isOnline: z.boolean({error: "Availability status is required"})
+})
+
+
+export type UpdateDriverAvailabilityInput = z.infer<typeof updateDriverAvailabilitySchema>;
 export type CreateDriverInput = z.infer<typeof createDriverZodSchema>;

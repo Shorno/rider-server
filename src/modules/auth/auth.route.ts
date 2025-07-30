@@ -1,7 +1,7 @@
 import {Router} from "express";
 import {credentialsLogin, getNewAccessToken, logout, resetPassword} from "./auth.controller";
 import {checkAuth} from "../../middlewares/checkAuth";
-import {Role} from "../user/user.interface";
+import {Role} from "../../types/shared.types";
 
 const router = Router()
 
