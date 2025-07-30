@@ -4,6 +4,7 @@ import { IRide } from "./ride.interface";
 import {CreateRideRequestInput, CancelRideInput, RateRideInput, RejectRideInput} from "./ride.validation";
 import { RideStatus, Role, PaymentStatus } from "../../types/shared.types";
 import AppError from "../../errorHelpers/AppError";
+import User from "../user/user.model";
 
 const calculateFare = (distance: number) => {
     const baseFare = 50;
@@ -284,9 +285,8 @@ const completeRide = async (rideId: string, driverId: string): Promise<IRide> =>
         throw new AppError(500, "Failed to complete ride");
     }
 
-    // Update driver's totalRides and totalEarnings
     if (updatedRide.driverId && updatedRide.fare && updatedRide.fare.totalFare) {
-        await mongoose.model('User').updateOne(
+        await User.updateOne(
             { _id: updatedRide.driverId },
             {
                 $inc: {

@@ -12,4 +12,14 @@ export const createAdminZodSchema = z.object({
     adminToken: z.string({error: "Admin token is required"}),
 });
 
+export const updateDriverStatusSchema = z.object({
+    action: z.enum(["approve", "suspend", "activate"], {error: "Action must be one of 'approve', 'suspend', or 'activate'"}),
+});
+export const updateUserStatusSchema = z.object({
+    action: z.enum(["block", "unblock"], {error: "Action must be one of 'block' or 'unblock'"}),
+});
+
+
 export type CreateAdminInput = z.infer<typeof createAdminZodSchema>;
+export type UpdateDriverStatusInput = z.infer<typeof updateDriverStatusSchema>;
+export type UpdateUserStatusInput = z.infer<typeof updateUserStatusSchema>;

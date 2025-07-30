@@ -1,6 +1,12 @@
 import {Request, Response} from 'express';
 import httpStatus from "http-status-codes";
-import {adminSignupService, getAllUsersService, getAllDriversService, getAllRidesService} from "./admin.service";
+import {
+    adminSignupService,
+    getAllUsersService,
+    getAllDriversService,
+    getAllRidesService,
+    updateDriverStatusService, updateUserStatusService
+} from "./admin.service";
 import {catchAsync} from "../../utils/catchAsync";
 import {sendResponse} from "../../utils/sendResponse";
 
@@ -44,3 +50,27 @@ export const getAllRides = catchAsync(async (req, res) => {
         data: rides,
     });
 });
+
+
+export const updateDriverStatus = catchAsync(async (req: Request, res: Response) => {
+    const driverId = req.params?.driverId;
+    const updatedDriver = await updateDriverStatusService(driverId, req.body);
+    sendResponse(res, {
+        success: true,
+        statusCode: httpStatus.OK,
+        message: "Driver status updated successfully",
+        data: updatedDriver,
+    });
+})
+
+
+export const updateUserStatus = catchAsync(async (req: Request, res: Response) => {
+    const userId = req.params?.userId;
+    const updatedUser = await updateUserStatusService(userId, req.body);
+    sendResponse(res, {
+        success: true,
+        statusCode: httpStatus.OK,
+        message: "User status updated successfully",
+        data: updatedUser,
+    });
+})
