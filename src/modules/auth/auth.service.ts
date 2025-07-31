@@ -50,9 +50,11 @@ export const getNewAccessTokenService = async (refreshToken: string) => {
     }
 }
 
-export const resetPasswordService = async (oldPassword: string, newPassword: string, decodedToken: JwtPayload) => {
+export const resetPasswordService = async (oldPassword: string, newPassword: string, userId: JwtPayload) => {
 
-    const user = await User.findById(decodedToken.id);
+    const user = await User.findById(userId).select("+password");
+
+    console.log(user)
 
     if (!user) {
         throw new AppError(httpStatus.NOT_FOUND, 'User not found.');

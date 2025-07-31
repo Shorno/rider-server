@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
-import { Ride } from "./ride.model";
-import { IRide } from "./ride.interface";
+import {Ride} from "./ride.model";
+import {IRide} from "./ride.interface";
 import {CreateRideRequestInput, CancelRideInput, RateRideInput, RejectRideInput} from "./ride.validation";
-import { RideStatus, Role, PaymentStatus } from "../../types/shared.types";
+import {RideStatus, Role, PaymentStatus} from "../../types/shared.types";
 import AppError from "../../errorHelpers/AppError";
 import User from "../user/user.model";
 
@@ -23,7 +23,7 @@ const calculateFare = (distance: number) => {
 const createRideRequest = async (riderId: string, payload: CreateRideRequestInput): Promise<IRide> => {
     const activeRide = await Ride.findOne({
         riderId: new mongoose.Types.ObjectId(riderId),
-        status: { $in: [RideStatus.REQUESTED, RideStatus.ACCEPTED, RideStatus.IN_PROGRESS] }
+        status: {$in: [RideStatus.REQUESTED, RideStatus.ACCEPTED, RideStatus.IN_PROGRESS]}
     });
 
     if (activeRide) {
@@ -64,13 +64,15 @@ const cancelRide = async (rideId: string, riderId: string, payload: CancelRideIn
         throw new AppError(404, "Ride not found");
     }
 
-    if (ride.status === RideStatus.COMPLETED) {
-        throw new AppError(400, "Cannot cancel a completed ride");
-    }
 
     if (ride.status === RideStatus.CANCELLED) {
         throw new AppError(400, "Ride is already cancelled");
     }
+
+    if (ride.status !== RideStatus.REQUESTED) {
+        throw new AppError(400, "You can only cancel a ride that is in requested state");
+    }
+
 
     const updatedRide = await Ride.findByIdAndUpdate(
         rideId,
@@ -80,14 +82,20 @@ const cancelRide = async (rideId: string, riderId: string, payload: CancelRideIn
             cancelledBy: Role.RIDER,
             cancellationReason: payload.cancellationReason
         },
-        { new: true }
+        {new: true}
     ).populate('riderId driverId', 'name phone email').lean();
+
+    await User.updateOne(
+        {_id: riderId},
+        {$inc: {'riderInfo.cancelCount': 1}}
+    );
 
     return updatedRide!;
 };
 
 const acceptRideRequest = async (rideId: string, driverId: string): Promise<IRide> => {
     const ride = await Ride.findById(rideId);
+
 
     if (!ride) {
         throw new AppError(404, "Ride request not found");
@@ -105,6 +113,25 @@ const acceptRideRequest = async (rideId: string, driverId: string): Promise<IRid
         throw new AppError(400, "This ride has already been accepted by another driver");
     }
 
+
+    const driver = await User.findById(driverId);
+    if (!driver) {
+        throw new AppError(404, "Driver is not found")
+    }
+
+
+    if (driver.driverInfo?.isSuspended) {
+        throw new AppError(400, "Request cannot be accepted, driver is suspended");
+    }
+    if (!driver.driverInfo?.isApproved) {
+        throw new AppError(400, "Request cannot be accepted, driver is not approved");
+    }
+
+    if (!driver.driverInfo?.isOnline) {
+        throw new AppError(400, "Request cannot be accepted, driver is offline.");
+    }
+
+
     const updatedRide = await Ride.findByIdAndUpdate(
         rideId,
         {
@@ -112,7 +139,7 @@ const acceptRideRequest = async (rideId: string, driverId: string): Promise<IRid
             status: RideStatus.ACCEPTED,
             acceptedAt: new Date()
         },
-        { new: true }
+        {new: true}
     ).populate('riderId driverId', 'name phone email').lean();
 
     if (!updatedRide) {
@@ -151,7 +178,7 @@ const rejectRideRequest = async (rideId: string, driverId: string, payload: Reje
                 }
             }
         },
-        { new: true }
+        {new: true}
     ).populate('riderId', 'name phone email').lean();
 
     if (!updatedRide) {
@@ -165,14 +192,14 @@ const rejectRideRequest = async (rideId: string, driverId: string, payload: Reje
 const getRideHistory = async (riderId: string, page: number = 1, limit: number = 10) => {
     const skip = (page - 1) * limit;
 
-    const rides = await Ride.find({ riderId: new mongoose.Types.ObjectId(riderId) })
+    const rides = await Ride.find({riderId: new mongoose.Types.ObjectId(riderId)})
         .populate('driverId', 'name phone email')
-        .sort({ createdAt: -1 })
+        .sort({createdAt: -1})
         .skip(skip)
         .limit(limit)
         .lean();
 
-    const total = await Ride.countDocuments({ riderId: new mongoose.Types.ObjectId(riderId) });
+    const total = await Ride.countDocuments({riderId: new mongoose.Types.ObjectId(riderId)});
 
     return {
         rides,
@@ -219,7 +246,7 @@ const pickUpRide = async (rideId: string, driverId: string): Promise<IRide> => {
             status: RideStatus.PICKED_UP,
             pickedUpAt: new Date()
         },
-        { new: true }
+        {new: true}
     ).populate('driverId riderId', 'name phone email').lean();
 
     if (!updatedRide) {
@@ -247,7 +274,7 @@ const startRide = async (rideId: string, driverId: string): Promise<IRide> => {
             status: RideStatus.IN_PROGRESS,
             pickedUpAt: new Date()
         },
-        { new: true }
+        {new: true}
     ).populate('driverId riderId', 'name phone email').lean();
 
     if (!updatedRide) {
@@ -278,7 +305,7 @@ const completeRide = async (rideId: string, driverId: string): Promise<IRide> =>
             completedAt: new Date(),
             paymentStatus: PaymentStatus.COMPLETED
         },
-        { new: true }
+        {new: true}
     ).populate('driverId riderId', 'name phone email').lean();
 
     if (!updatedRide) {
@@ -287,7 +314,7 @@ const completeRide = async (rideId: string, driverId: string): Promise<IRide> =>
 
     if (updatedRide.driverId && updatedRide.fare && updatedRide.fare.totalFare) {
         await User.updateOne(
-            { _id: updatedRide.driverId },
+            {_id: updatedRide.driverId},
             {
                 $inc: {
                     'driverInfo.totalRides': 1,
@@ -326,7 +353,7 @@ const rateRide = async (rideId: string, riderId: string, payload: RateRideInput)
                 "rating.riderComment": payload.comment
             }
         },
-        { new: true }
+        {new: true}
     ).populate('driverId', 'name phone email').lean();
 
     return updatedRide!;

@@ -1,0 +1,2279 @@
+{
+	"info": {
+		"_postman_id": "ebc2735d-d1cc-44fb-ac22-d70faeb6f6ad",
+		"name": "Rider-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36492185"
+	},
+	"item": [
+		{
+			"name": "CREATE USER",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Shorno Kamal Roy\",\r\n    \"email\" : \"fb.shorno@gmail.com\",\r\n    \"password\" : \"rider@pass\",\r\n    \"phone\":\"01841151827\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/user/signup",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CREATE USER",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Shorno Kamal Roy\",\r\n    \"email\" : \"fb.shorno@gmail.com\",\r\n    \"password\" : \"rider@pass\",\r\n    \"phone\":\"01841151827\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "335"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14f-YkFrb+9F11buw1QnijEB8AVJ4Qk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 15:50:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"user\": {\n            \"name\": \"Shorno Kamal Roy\",\n            \"email\": \"fb.shorno@gmail.com\",\n            \"phone\": \"01841151827\",\n            \"role\": \"rider\",\n            \"isActive\": true,\n            \"isBlocked\": false,\n            \"_id\": \"688b90c86bc6d2713f5d1bb2\",\n            \"createdAt\": \"2025-07-31T15:50:32.615Z\",\n            \"updatedAt\": \"2025-07-31T15:50:32.615Z\",\n            \"__v\": 0\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "DRIVER REG",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Nzk2NmQwZTg0ZTk5OWEyMzc5OWNmMiIsImVtYWlsIjoiZmIuc2hvcm5vOTExQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MzAyOTMyOSwiZXhwIjoxNzUzMDI5MzU5fQ.IzOeVfeS6vx7j7xx1C8dM3imP1oBCDZrzY30lu_poX4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Driver Jhon\",\r\n  \"email\": \"rider@gmail.com\", \r\n  \"password\": \"driver@pass\",\r\n  \"phone\": \"01841151825\",\r\n  \"vehicleType\": \"car\",\r\n  \"vehicleModel\": \"Toyota Corolla\",\r\n  \"vehiclePlate\": \"DHA-GA-123\",\r\n  \"licenseNumber\": \"DL123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/driver/signup",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"driver",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DRIVER REG",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Nzk2NmQwZTg0ZTk5OWEyMzc5OWNmMiIsImVtYWlsIjoiZmIuc2hvcm5vOTExQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MzAyOTMyOSwiZXhwIjoxNzUzMDI5MzU5fQ.IzOeVfeS6vx7j7xx1C8dM3imP1oBCDZrzY30lu_poX4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Driver Jhon\",\r\n  \"email\": \"rider@gmail.com\", \r\n  \"password\": \"driver@pass\",\r\n  \"phone\": \"01841151825\",\r\n  \"vehicleType\": \"car\",\r\n  \"vehicleModel\": \"Toyota Corolla\",\r\n  \"vehiclePlate\": \"DHA-GA-123\",\r\n  \"licenseNumber\": \"DL123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/driver/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"driver",
+								"signup"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "486"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e6-hX4UzdExd7V7Pm1jmOQ5A7hkpzE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 15:52:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"Driver registered successfully. Pending approval.\",\n    \"data\": {\n        \"user\": {\n            \"name\": \"Driver Jhon\",\n            \"email\": \"rider@gmail.com\",\n            \"phone\": \"01841151825\",\n            \"role\": \"driver\",\n            \"isActive\": true,\n            \"isBlocked\": false,\n            \"driverInfo\": {\n                \"vehicleType\": \"car\",\n                \"isApproved\": false,\n                \"isSuspended\": false,\n                \"isOnline\": false,\n                \"totalEarnings\": 0,\n                \"totalRides\": 0,\n                \"rating\": 5\n            },\n            \"_id\": \"688b912e6bc6d2713f5d1bb6\",\n            \"createdAt\": \"2025-07-31T15:52:14.422Z\",\n            \"updatedAt\": \"2025-07-31T15:52:14.422Z\",\n            \"__v\": 0\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "ADMIN REG",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Nzk2NmQwZTg0ZTk5OWEyMzc5OWNmMiIsImVtYWlsIjoiZmIuc2hvcm5vOTExQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MzAyOTMyOSwiZXhwIjoxNzUzMDI5MzU5fQ.IzOeVfeS6vx7j7xx1C8dM3imP1oBCDZrzY30lu_poX4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Super Admin\",\r\n  \"email\": \"admin@gmail.com\", \r\n  \"password\": \"admin@pass\",\r\n  \"phone\": \"1234567890\",\r\n  \"adminToken\": \"secret-admin-token\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/admin/signup",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"admin",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ADMIN REG",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Nzk2NmQwZTg0ZTk5OWEyMzc5OWNmMiIsImVtYWlsIjoiZmIuc2hvcm5vOTExQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MzAyOTMyOSwiZXhwIjoxNzUzMDI5MzU5fQ.IzOeVfeS6vx7j7xx1C8dM3imP1oBCDZrzY30lu_poX4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Super Admin\",\r\n  \"email\": \"admin@gmail.com\", \r\n  \"password\": \"admin@pass\",\r\n  \"phone\": \"1234567890\",\r\n  \"adminToken\": \"secret-admin-token\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"signup"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "334"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14e-tSASBgUhmoJlgPIQDOyhRUoPbGA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 15:52:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"Admin account created successfully\",\n    \"data\": {\n        \"user\": {\n            \"name\": \"Super Admin\",\n            \"email\": \"admin@gmail.com\",\n            \"phone\": \"1234567890\",\n            \"role\": \"admin\",\n            \"isActive\": true,\n            \"isBlocked\": false,\n            \"_id\": \"688b913c6bc6d2713f5d1bba\",\n            \"createdAt\": \"2025-07-31T15:52:28.236Z\",\n            \"updatedAt\": \"2025-07-31T15:52:28.236Z\",\n            \"__v\": 0\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Nzk2NmQwZTg0ZTk5OWEyMzc5OWNmMiIsImVtYWlsIjoiZmIuc2hvcm5vOTExQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MzAyOTMyOSwiZXhwIjoxNzUzMDI5MzU5fQ.IzOeVfeS6vx7j7xx1C8dM3imP1oBCDZrzY30lu_poX4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"admin@pass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "LOGIN",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Nzk2NmQwZTg0ZTk5OWEyMzc5OWNmMiIsImVtYWlsIjoiZmIuc2hvcm5vOTExQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MzAyOTMyOSwiZXhwIjoxNzUzMDI5MzU5fQ.IzOeVfeS6vx7j7xx1C8dM3imP1oBCDZrzY30lu_poX4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"fb.shorno@gmail.com\",\r\n    \"password\": \"rider@pass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MGM4NmJjNmQyNzEzZjVkMWJiMiIsImVtYWlsIjoiZmIuc2hvcm5vQGdtYWlsLmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc1Mzk3NzE2OSwiZXhwIjoxNzU0MDYzNTY5fQ.pfFJyJiMKXiCtY2JoD-dw-r_VeL_WEjsuw82B_4M68c; Max-Age=2592000; Path=/; Expires=Sat, 30 Aug 2025 15:52:49 GMT; HttpOnly"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MGM4NmJjNmQyNzEzZjVkMWJiMiIsImVtYWlsIjoiZmIuc2hvcm5vQGdtYWlsLmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc1Mzk3NzE2OSwiZXhwIjoxNzU2NTY5MTY5fQ.taxLRn3TvdAXtQH5HYW5KSaUGU4g1H9slVvh-zZ0rW8; Max-Age=2592000; Path=/; Expires=Sat, 30 Aug 2025 15:52:49 GMT; HttpOnly"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "823"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"337-I9L3lrZ5zhkSBYcpguzQ1fp0xw8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 15:52:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Login successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"688b90c86bc6d2713f5d1bb2\",\n            \"name\": \"Shorno Kamal Roy\",\n            \"email\": \"fb.shorno@gmail.com\",\n            \"phone\": \"01841151827\",\n            \"role\": \"rider\",\n            \"isActive\": true,\n            \"isBlocked\": false,\n            \"createdAt\": \"2025-07-31T15:50:32.615Z\",\n            \"updatedAt\": \"2025-07-31T15:50:32.615Z\",\n            \"__v\": 0\n        },\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MGM4NmJjNmQyNzEzZjVkMWJiMiIsImVtYWlsIjoiZmIuc2hvcm5vQGdtYWlsLmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc1Mzk3NzE2OSwiZXhwIjoxNzU0MDYzNTY5fQ.pfFJyJiMKXiCtY2JoD-dw-r_VeL_WEjsuw82B_4M68c\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MGM4NmJjNmQyNzEzZjVkMWJiMiIsImVtYWlsIjoiZmIuc2hvcm5vQGdtYWlsLmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc1Mzk3NzE2OSwiZXhwIjoxNzU2NTY5MTY5fQ.taxLRn3TvdAXtQH5HYW5KSaUGU4g1H9slVvh-zZ0rW8\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "RIDE REQUEST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MGM4NmJjNmQyNzEzZjVkMWJiMiIsImVtYWlsIjoiZmIuc2hvcm5vQGdtYWlsLmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc1Mzk3NzE2OSwiZXhwIjoxNzU0MDYzNTY5fQ.pfFJyJiMKXiCtY2JoD-dw-r_VeL_WEjsuw82B_4M68c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"pickupLocation\": \"Savar, Dhaka\",\r\n  \"destinationLocation\": \"Mirpur, Dhaka\",\r\n  \"estimatedDistance\": 12,\r\n  \"paymentMethod\": \"cash\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ride/request",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ride",
+						"request"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "RIDE REQUEST",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MGM4NmJjNmQyNzEzZjVkMWJiMiIsImVtYWlsIjoiZmIuc2hvcm5vQGdtYWlsLmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc1Mzk3NzE2OSwiZXhwIjoxNzU0MDYzNTY5fQ.pfFJyJiMKXiCtY2JoD-dw-r_VeL_WEjsuw82B_4M68c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pickupLocation\": \"Savar, Dhaka\",\r\n  \"destinationLocation\": \"Mirpur, Dhaka\",\r\n  \"estimatedDistance\": 12,\r\n  \"paymentMethod\": \"cash\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/ride/request",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ride",
+								"request"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "646"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"286-bxZzDy37p2Zo8aqKrPC8+YBCEEI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 15:53:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"Ride request created successfully\",\n    \"data\": {\n        \"_id\": \"688b91796bc6d2713f5d1bbf\",\n        \"riderId\": {\n            \"_id\": \"688b90c86bc6d2713f5d1bb2\",\n            \"name\": \"Shorno Kamal Roy\",\n            \"email\": \"fb.shorno@gmail.com\",\n            \"phone\": \"01841151827\"\n        },\n        \"driverId\": null,\n        \"pickupLocation\": \"Savar, Dhaka\",\n        \"destinationLocation\": \"Mirpur, Dhaka\",\n        \"estimatedDistance\": 12,\n        \"status\": \"requested\",\n        \"fare\": {\n            \"baseFare\": 50,\n            \"distanceFare\": 180,\n            \"totalFare\": 230,\n            \"currency\": \"BDT\"\n        },\n        \"requestedAt\": \"2025-07-31T15:53:29.706Z\",\n        \"paymentStatus\": \"pending\",\n        \"paymentMethod\": \"cash\",\n        \"rejectedDrivers\": [],\n        \"createdAt\": \"2025-07-31T15:53:29.708Z\",\n        \"updatedAt\": \"2025-07-31T15:53:29.708Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "CANCEL RIDE",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MGM4NmJjNmQyNzEzZjVkMWJiMiIsImVtYWlsIjoiZmIuc2hvcm5vQGdtYWlsLmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc1Mzk3NzE2OSwiZXhwIjoxNzU0MDYzNTY5fQ.pfFJyJiMKXiCtY2JoD-dw-r_VeL_WEjsuw82B_4M68c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cancellationReason\": \"Change of plans, no longer need the ride\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ride/688b91796bc6d2713f5d1bbf/cancel",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ride",
+						"688b91796bc6d2713f5d1bbf",
+						"cancel"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CANCEL RIDE",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MGM4NmJjNmQyNzEzZjVkMWJiMiIsImVtYWlsIjoiZmIuc2hvcm5vQGdtYWlsLmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc1Mzk3NzE2OSwiZXhwIjoxNzU0MDYzNTY5fQ.pfFJyJiMKXiCtY2JoD-dw-r_VeL_WEjsuw82B_4M68c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cancellationReason\": \"Change of plans, no longer need the ride\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/ride/688b91796bc6d2713f5d1bbf/cancel",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ride",
+								"688b91796bc6d2713f5d1bbf",
+								"cancel"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "767"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2ff-j2brxoICnycPoFGPSoQcndZrti0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 15:54:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Ride cancelled successfully\",\n    \"data\": {\n        \"_id\": \"688b91796bc6d2713f5d1bbf\",\n        \"riderId\": {\n            \"_id\": \"688b90c86bc6d2713f5d1bb2\",\n            \"name\": \"Shorno Kamal Roy\",\n            \"email\": \"fb.shorno@gmail.com\",\n            \"phone\": \"01841151827\"\n        },\n        \"driverId\": null,\n        \"pickupLocation\": \"Savar, Dhaka\",\n        \"destinationLocation\": \"Mirpur, Dhaka\",\n        \"estimatedDistance\": 12,\n        \"status\": \"cancelled\",\n        \"fare\": {\n            \"baseFare\": 50,\n            \"distanceFare\": 180,\n            \"totalFare\": 230,\n            \"currency\": \"BDT\"\n        },\n        \"requestedAt\": \"2025-07-31T15:53:29.706Z\",\n        \"paymentStatus\": \"pending\",\n        \"paymentMethod\": \"cash\",\n        \"rejectedDrivers\": [],\n        \"createdAt\": \"2025-07-31T15:53:29.708Z\",\n        \"updatedAt\": \"2025-07-31T15:54:49.162Z\",\n        \"__v\": 0,\n        \"cancellationReason\": \"Change of plans, no longer need the ride\",\n        \"cancelledAt\": \"2025-07-31T15:54:49.162Z\",\n        \"cancelledBy\": \"rider\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "ACCEPT RIDE REQUEST",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGE4NjRiMTg4MWIzNTFkOTVkOWIwMCIsImVtYWlsIjoicmlkZXJAZ21haWwuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzk0NDQyNCwiZXhwIjoxNzU0MDMwODI0fQ.g0Szs97RLwcqWsoDGtrOg25tkCPwxGi63k6E_-FAUuM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"action\": \"reject\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ride/688b10f5c689a0f09b084fd1/accept",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ride",
+						"688b10f5c689a0f09b084fd1",
+						"accept"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ACCEPT RIDE REQUEST",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTJlNmJjNmQyNzEzZjVkMWJiNiIsImVtYWlsIjoicmlkZXJAZ21haWwuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzk4MDQ2MSwiZXhwIjoxNzU0MDY2ODYxfQ.LKEsKEQ42DX8Rkw_DIZgQY1jd1h9n6uouxajl16wwjU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"action\": \"reject\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/ride/688b9e9d6c2da76171bf0119/accept",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ride",
+								"688b9e9d6c2da76171bf0119",
+								"accept"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "786"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"312-+oLW3XI0bh98eWwwaC4/AkP5N9s\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 16:51:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Ride request accepted successfully\",\n    \"data\": {\n        \"_id\": \"688b9e9d6c2da76171bf0119\",\n        \"riderId\": {\n            \"_id\": \"688b90c86bc6d2713f5d1bb2\",\n            \"name\": \"Shorno Kamal Roy\",\n            \"email\": \"fb.shorno@gmail.com\",\n            \"phone\": \"01841151827\"\n        },\n        \"driverId\": {\n            \"_id\": \"688b912e6bc6d2713f5d1bb6\",\n            \"name\": \"Driver Jhon\",\n            \"email\": \"rider@gmail.com\",\n            \"phone\": \"01841151825\"\n        },\n        \"pickupLocation\": \"Uttora, Dhaka\",\n        \"destinationLocation\": \"Mirpur, Dhaka\",\n        \"estimatedDistance\": 15,\n        \"status\": \"accepted\",\n        \"fare\": {\n            \"baseFare\": 50,\n            \"distanceFare\": 225,\n            \"totalFare\": 275,\n            \"currency\": \"BDT\"\n        },\n        \"requestedAt\": \"2025-07-31T16:49:33.339Z\",\n        \"paymentStatus\": \"pending\",\n        \"paymentMethod\": \"cash\",\n        \"rejectedDrivers\": [],\n        \"createdAt\": \"2025-07-31T16:49:33.340Z\",\n        \"updatedAt\": \"2025-07-31T16:51:57.782Z\",\n        \"__v\": 0,\n        \"acceptedAt\": \"2025-07-31T16:51:57.781Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "REJECT RIDE REQUEST",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTJlNmJjNmQyNzEzZjVkMWJiNiIsImVtYWlsIjoicmlkZXJAZ21haWwuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzk4MDQ2MSwiZXhwIjoxNzU0MDY2ODYxfQ.LKEsKEQ42DX8Rkw_DIZgQY1jd1h9n6uouxajl16wwjU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"rejectReason\": \"Going back to home\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ride/688b9e176c2da76171bf0107/reject",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ride",
+						"688b9e176c2da76171bf0107",
+						"reject"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "REJECT RIDE REQUEST",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTJlNmJjNmQyNzEzZjVkMWJiNiIsImVtYWlsIjoicmlkZXJAZ21haWwuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzk4MDQ2MSwiZXhwIjoxNzU0MDY2ODYxfQ.LKEsKEQ42DX8Rkw_DIZgQY1jd1h9n6uouxajl16wwjU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"rejectReason\": \"Going back to home\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/ride/688b9e176c2da76171bf0107/reject",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ride",
+								"688b9e176c2da76171bf0107",
+								"reject"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "760"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2f8-3oLQM/fyeL6/f0bRUrCnKe3ZVGc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 16:48:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Ride request rejected successfully\",\n    \"data\": {\n        \"_id\": \"688b9e176c2da76171bf0107\",\n        \"riderId\": {\n            \"_id\": \"688b90c86bc6d2713f5d1bb2\",\n            \"name\": \"Shorno Kamal Roy\",\n            \"email\": \"fb.shorno@gmail.com\",\n            \"phone\": \"01841151827\"\n        },\n        \"driverId\": null,\n        \"pickupLocation\": \"Mohammadpur, Dhaka\",\n        \"destinationLocation\": \"Mirpur, Dhaka\",\n        \"estimatedDistance\": 8,\n        \"status\": \"requested\",\n        \"fare\": {\n            \"baseFare\": 50,\n            \"distanceFare\": 120,\n            \"totalFare\": 170,\n            \"currency\": \"BDT\"\n        },\n        \"requestedAt\": \"2025-07-31T16:47:19.912Z\",\n        \"paymentStatus\": \"pending\",\n        \"paymentMethod\": \"cash\",\n        \"rejectedDrivers\": [\n            {\n                \"driverId\": \"688b912e6bc6d2713f5d1bb6\",\n                \"rejectReason\": \"Going back to home\",\n                \"_id\": \"688b9e636c2da76171bf010e\"\n            }\n        ],\n        \"createdAt\": \"2025-07-31T16:47:19.919Z\",\n        \"updatedAt\": \"2025-07-31T16:48:35.724Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "PICKUP RIDE",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGE4NjRiMTg4MWIzNTFkOTVkOWIwMCIsImVtYWlsIjoicmlkZXJAZ21haWwuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzk0NDQyNCwiZXhwIjoxNzU0MDMwODI0fQ.g0Szs97RLwcqWsoDGtrOg25tkCPwxGi63k6E_-FAUuM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ride/688b10f5c689a0f09b084fd1/pickup",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ride",
+						"688b10f5c689a0f09b084fd1",
+						"pickup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PICKUP RIDE",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTJlNmJjNmQyNzEzZjVkMWJiNiIsImVtYWlsIjoicmlkZXJAZ21haWwuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzk4MDQ2MSwiZXhwIjoxNzU0MDY2ODYxfQ.LKEsKEQ42DX8Rkw_DIZgQY1jd1h9n6uouxajl16wwjU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/ride/688b9e9d6c2da76171bf0119/pickup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ride",
+								"688b9e9d6c2da76171bf0119",
+								"pickup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "820"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"334-4S+dfNjPHazomFBfYv+gEJGP4+k\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 16:52:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Ride picked up successfully\",\n    \"data\": {\n        \"_id\": \"688b9e9d6c2da76171bf0119\",\n        \"riderId\": {\n            \"_id\": \"688b90c86bc6d2713f5d1bb2\",\n            \"name\": \"Shorno Kamal Roy\",\n            \"email\": \"fb.shorno@gmail.com\",\n            \"phone\": \"01841151827\"\n        },\n        \"driverId\": {\n            \"_id\": \"688b912e6bc6d2713f5d1bb6\",\n            \"name\": \"Driver Jhon\",\n            \"email\": \"rider@gmail.com\",\n            \"phone\": \"01841151825\"\n        },\n        \"pickupLocation\": \"Uttora, Dhaka\",\n        \"destinationLocation\": \"Mirpur, Dhaka\",\n        \"estimatedDistance\": 15,\n        \"status\": \"picked_up\",\n        \"fare\": {\n            \"baseFare\": 50,\n            \"distanceFare\": 225,\n            \"totalFare\": 275,\n            \"currency\": \"BDT\"\n        },\n        \"requestedAt\": \"2025-07-31T16:49:33.339Z\",\n        \"paymentStatus\": \"pending\",\n        \"paymentMethod\": \"cash\",\n        \"rejectedDrivers\": [],\n        \"createdAt\": \"2025-07-31T16:49:33.340Z\",\n        \"updatedAt\": \"2025-07-31T16:52:28.470Z\",\n        \"__v\": 0,\n        \"acceptedAt\": \"2025-07-31T16:51:57.781Z\",\n        \"pickedUpAt\": \"2025-07-31T16:52:28.469Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "START RIDE",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODhmNzllNTA1MzE5NDA0NTA2ZDM4NSIsImVtYWlsIjoiam9obi5kb2VAZXhhbXBsZS5jb20iLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzUzODkyMDYwLCJleHAiOjE3NTM5Nzg0NjB9.GQZ8C7_9611Q1U8pnLkP6CQdr82jJz89D0KpA7hJFVM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ride/688a44c9b3da9c751562ad9e/start",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ride",
+						"688a44c9b3da9c751562ad9e",
+						"start"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "START RIDE",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTJlNmJjNmQyNzEzZjVkMWJiNiIsImVtYWlsIjoicmlkZXJAZ21haWwuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzk4MDQ2MSwiZXhwIjoxNzU0MDY2ODYxfQ.LKEsKEQ42DX8Rkw_DIZgQY1jd1h9n6uouxajl16wwjU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/ride/688b9e9d6c2da76171bf0119/start",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ride",
+								"688b9e9d6c2da76171bf0119",
+								"start"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "820"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"334-dYXHaSaaCcsdD4rfyhebhUp/QDo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 16:52:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Ride started successfully\",\n    \"data\": {\n        \"_id\": \"688b9e9d6c2da76171bf0119\",\n        \"riderId\": {\n            \"_id\": \"688b90c86bc6d2713f5d1bb2\",\n            \"name\": \"Shorno Kamal Roy\",\n            \"email\": \"fb.shorno@gmail.com\",\n            \"phone\": \"01841151827\"\n        },\n        \"driverId\": {\n            \"_id\": \"688b912e6bc6d2713f5d1bb6\",\n            \"name\": \"Driver Jhon\",\n            \"email\": \"rider@gmail.com\",\n            \"phone\": \"01841151825\"\n        },\n        \"pickupLocation\": \"Uttora, Dhaka\",\n        \"destinationLocation\": \"Mirpur, Dhaka\",\n        \"estimatedDistance\": 15,\n        \"status\": \"in_progress\",\n        \"fare\": {\n            \"baseFare\": 50,\n            \"distanceFare\": 225,\n            \"totalFare\": 275,\n            \"currency\": \"BDT\"\n        },\n        \"requestedAt\": \"2025-07-31T16:49:33.339Z\",\n        \"paymentStatus\": \"pending\",\n        \"paymentMethod\": \"cash\",\n        \"rejectedDrivers\": [],\n        \"createdAt\": \"2025-07-31T16:49:33.340Z\",\n        \"updatedAt\": \"2025-07-31T16:52:54.859Z\",\n        \"__v\": 0,\n        \"acceptedAt\": \"2025-07-31T16:51:57.781Z\",\n        \"pickedUpAt\": \"2025-07-31T16:52:54.859Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "COMPLETE RIDE",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODhmNzllNTA1MzE5NDA0NTA2ZDM4NSIsImVtYWlsIjoiam9obi5kb2VAZXhhbXBsZS5jb20iLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzUzODkyMDYwLCJleHAiOjE3NTM5Nzg0NjB9.GQZ8C7_9611Q1U8pnLkP6CQdr82jJz89D0KpA7hJFVM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ride/688a495f42d6a6b97dc3eab5/complete",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ride",
+						"688a495f42d6a6b97dc3eab5",
+						"complete"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "COMPLETE RIDE",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTJlNmJjNmQyNzEzZjVkMWJiNiIsImVtYWlsIjoicmlkZXJAZ21haWwuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzk4MDQ2MSwiZXhwIjoxNzU0MDY2ODYxfQ.LKEsKEQ42DX8Rkw_DIZgQY1jd1h9n6uouxajl16wwjU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/ride/688b9e9d6c2da76171bf0119/complete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ride",
+								"688b9e9d6c2da76171bf0119",
+								"complete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "863"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35f-Zihrn8AU+fZiiFxeW0MKipJe4BA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 16:53:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Ride completed successfully\",\n    \"data\": {\n        \"_id\": \"688b9e9d6c2da76171bf0119\",\n        \"riderId\": {\n            \"_id\": \"688b90c86bc6d2713f5d1bb2\",\n            \"name\": \"Shorno Kamal Roy\",\n            \"email\": \"fb.shorno@gmail.com\",\n            \"phone\": \"01841151827\"\n        },\n        \"driverId\": {\n            \"_id\": \"688b912e6bc6d2713f5d1bb6\",\n            \"name\": \"Driver Jhon\",\n            \"email\": \"rider@gmail.com\",\n            \"phone\": \"01841151825\"\n        },\n        \"pickupLocation\": \"Uttora, Dhaka\",\n        \"destinationLocation\": \"Mirpur, Dhaka\",\n        \"estimatedDistance\": 15,\n        \"status\": \"completed\",\n        \"fare\": {\n            \"baseFare\": 50,\n            \"distanceFare\": 225,\n            \"totalFare\": 275,\n            \"currency\": \"BDT\"\n        },\n        \"requestedAt\": \"2025-07-31T16:49:33.339Z\",\n        \"paymentStatus\": \"completed\",\n        \"paymentMethod\": \"cash\",\n        \"rejectedDrivers\": [],\n        \"createdAt\": \"2025-07-31T16:49:33.340Z\",\n        \"updatedAt\": \"2025-07-31T16:53:16.819Z\",\n        \"__v\": 0,\n        \"acceptedAt\": \"2025-07-31T16:51:57.781Z\",\n        \"pickedUpAt\": \"2025-07-31T16:52:54.859Z\",\n        \"completedAt\": \"2025-07-31T16:53:16.818Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "UPDATE AVAILABLITY",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTJlNmJjNmQyNzEzZjVkMWJiNiIsImVtYWlsIjoicmlkZXJAZ21haWwuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzk4MDQ2MSwiZXhwIjoxNzU0MDY2ODYxfQ.LKEsKEQ42DX8Rkw_DIZgQY1jd1h9n6uouxajl16wwjU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isOnline\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ride/availability/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ride",
+						"availability",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UPDATE AVAILABLITY",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTJlNmJjNmQyNzEzZjVkMWJiNiIsImVtYWlsIjoicmlkZXJAZ21haWwuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzk4MDQ2MSwiZXhwIjoxNzU0MDY2ODYxfQ.LKEsKEQ42DX8Rkw_DIZgQY1jd1h9n6uouxajl16wwjU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isOnline\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/driver/availability",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"driver",
+								"availability"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "469"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d5-mMdz7PTGKO/F/m/MXR39vQ4/PK0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 16:55:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Driver availability updated successfully.\",\n    \"data\": {\n        \"_id\": \"688b912e6bc6d2713f5d1bb6\",\n        \"name\": \"Driver Jhon\",\n        \"email\": \"rider@gmail.com\",\n        \"phone\": \"01841151825\",\n        \"role\": \"driver\",\n        \"isActive\": true,\n        \"isBlocked\": false,\n        \"driverInfo\": {\n            \"vehicleType\": \"car\",\n            \"isApproved\": true,\n            \"isSuspended\": false,\n            \"isOnline\": true,\n            \"totalEarnings\": 275,\n            \"totalRides\": 1,\n            \"rating\": 5\n        },\n        \"createdAt\": \"2025-07-31T15:52:14.422Z\",\n        \"updatedAt\": \"2025-07-31T16:55:36.577Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "EARNINGS HISTORY",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGE4NjRiMTg4MWIzNTFkOTVkOWIwMCIsImVtYWlsIjoicmlkZXJAZ21haWwuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1MzkwODkxMCwiZXhwIjoxNzUzOTk1MzEwfQ.dx1VQbGHXZp98corLebjyo3FIMf_dX17GG2M3C7Jkzw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"test\":\"ffg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/driver/earnings/history",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"driver",
+						"earnings",
+						"history"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "EARNINGS HISTORY",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTJlNmJjNmQyNzEzZjVkMWJiNiIsImVtYWlsIjoicmlkZXJAZ21haWwuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzk4MDQ2MSwiZXhwIjoxNzU0MDY2ODYxfQ.LKEsKEQ42DX8Rkw_DIZgQY1jd1h9n6uouxajl16wwjU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"test\":\"ffg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/driver/earnings/history",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"driver",
+								"earnings",
+								"history"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "643"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"283-Mf1mIRt4d4vDk94aoxonYwabYgM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 16:56:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Earnings history retrieved successfully.\",\n    \"data\": {\n        \"rides\": [\n            {\n                \"rideId\": \"688b9e9d6c2da76171bf0119\",\n                \"rider\": {\n                    \"_id\": \"688b90c86bc6d2713f5d1bb2\",\n                    \"name\": \"Shorno Kamal Roy\",\n                    \"phone\": \"01841151827\"\n                },\n                \"pickupLocation\": \"Uttora, Dhaka\",\n                \"destinationLocation\": \"Mirpur, Dhaka\",\n                \"distance\": 15,\n                \"fare\": {\n                    \"baseFare\": 50,\n                    \"distanceFare\": 225,\n                    \"totalFare\": 275,\n                    \"currency\": \"BDT\"\n                },\n                \"completedAt\": \"2025-07-31T16:53:16.818Z\",\n                \"paymentMethod\": \"cash\"\n            }\n        ],\n        \"pagination\": {\n            \"currentPage\": 1,\n            \"totalPages\": 1,\n            \"totalRides\": 1,\n            \"hasNextPage\": false,\n            \"hasPrevPage\": false\n        },\n        \"summary\": {\n            \"totalEarnings\": 275,\n            \"totalRides\": 1,\n            \"averageFare\": 275,\n            \"totalDistance\": 15\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GET ALL USERS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGE4NjY3MTg4MWIzNTFkOTVkOWIwNCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTEzOTQ2LCJleHAiOjE3NTQwMDAzNDZ9.tYrT3tP8qOPFj895m1m3ey2BCIju1QFW_gZvt2DZons",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"test\":\"ffg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/admin/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"admin",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET ALL USERS",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTNjNmJjNmQyNzEzZjVkMWJiYSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTgxMDMwLCJleHAiOjE3NTQwNjc0MzB9.OlWoV4rkodufN3Ngj4nVqmcS5SqVFQWn58BTEoOjvjY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"test\":\"ffg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "395"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"18b-Ma3XM0sXagMQxJ8xyfwvnVxV3Vw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 16:57:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"All users fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"688b90c86bc6d2713f5d1bb2\",\n            \"name\": \"Shorno Kamal Roy\",\n            \"email\": \"fb.shorno@gmail.com\",\n            \"phone\": \"01841151827\",\n            \"role\": \"rider\",\n            \"isActive\": true,\n            \"isBlocked\": false,\n            \"createdAt\": \"2025-07-31T15:50:32.615Z\",\n            \"updatedAt\": \"2025-07-31T16:49:14.530Z\",\n            \"__v\": 0,\n            \"riderInfo\": {\n                \"cancelCount\": 2,\n                \"preferredPaymentMethod\": \"cash\"\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "GET ALL DRIVERS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTNjNmJjNmQyNzEzZjVkMWJiYSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTgwMzA2LCJleHAiOjE3NTQwNjY3MDZ9.7xjcZObc2mvJ-UcX2VU8g5JSZ9JwTb_SJDPFwF6K6fE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"test\":\"ffg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/admin/drivers",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"admin",
+						"drivers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET ALL DRIVERS",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTNjNmJjNmQyNzEzZjVkMWJiYSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTgxMDMwLCJleHAiOjE3NTQwNjc0MzB9.OlWoV4rkodufN3Ngj4nVqmcS5SqVFQWn58BTEoOjvjY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"test\":\"ffg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/drivers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"drivers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "462"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1ce-yVty/Wy6F1MY/fue8EIR3VVrFgo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 16:57:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"All drivers fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"688b912e6bc6d2713f5d1bb6\",\n            \"name\": \"Driver Jhon\",\n            \"email\": \"rider@gmail.com\",\n            \"phone\": \"01841151825\",\n            \"role\": \"driver\",\n            \"isActive\": true,\n            \"isBlocked\": false,\n            \"driverInfo\": {\n                \"vehicleType\": \"car\",\n                \"isApproved\": true,\n                \"isSuspended\": false,\n                \"isOnline\": true,\n                \"totalEarnings\": 275,\n                \"totalRides\": 1,\n                \"rating\": 5\n            },\n            \"createdAt\": \"2025-07-31T15:52:14.422Z\",\n            \"updatedAt\": \"2025-07-31T16:55:36.577Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "GET ALL RIDERS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODhmODYyNjA4MDMwNTFkZGUxZmZjNiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTA4MTcwLCJleHAiOjE3NTM5OTQ1NzB9.okQDz0BP0lMUtJqIEm4IGPqf_WzQ-55Ahz69_IWLY0U",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"test\":\"ffg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/admin/rides",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"admin",
+						"rides"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET ALL RIDERS",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTNjNmJjNmQyNzEzZjVkMWJiYSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTgxMDMwLCJleHAiOjE3NTQwNjc0MzB9.OlWoV4rkodufN3Ngj4nVqmcS5SqVFQWn58BTEoOjvjY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"test\":\"ffg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/rides",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"rides"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2020"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7e4-0HDoZo+t3DuB3EJraQQ5Pcf4XJg\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 16:58:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"All rides fetched successfully\",\n    \"data\": [\n        {\n            \"fare\": {\n                \"baseFare\": 50,\n                \"distanceFare\": 180,\n                \"totalFare\": 230,\n                \"currency\": \"BDT\"\n            },\n            \"_id\": \"688b91796bc6d2713f5d1bbf\",\n            \"riderId\": \"688b90c86bc6d2713f5d1bb2\",\n            \"driverId\": null,\n            \"pickupLocation\": \"Savar, Dhaka\",\n            \"destinationLocation\": \"Mirpur, Dhaka\",\n            \"estimatedDistance\": 12,\n            \"status\": \"cancelled\",\n            \"requestedAt\": \"2025-07-31T15:53:29.706Z\",\n            \"paymentStatus\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"rejectedDrivers\": [],\n            \"createdAt\": \"2025-07-31T15:53:29.708Z\",\n            \"updatedAt\": \"2025-07-31T15:54:49.162Z\",\n            \"__v\": 0,\n            \"cancellationReason\": \"Change of plans, no longer need the ride\",\n            \"cancelledAt\": \"2025-07-31T15:54:49.162Z\",\n            \"cancelledBy\": \"rider\"\n        },\n        {\n            \"fare\": {\n                \"baseFare\": 50,\n                \"distanceFare\": 120,\n                \"totalFare\": 170,\n                \"currency\": \"BDT\"\n            },\n            \"_id\": \"688b9e176c2da76171bf0107\",\n            \"riderId\": \"688b90c86bc6d2713f5d1bb2\",\n            \"driverId\": null,\n            \"pickupLocation\": \"Mohammadpur, Dhaka\",\n            \"destinationLocation\": \"Mirpur, Dhaka\",\n            \"estimatedDistance\": 8,\n            \"status\": \"cancelled\",\n            \"requestedAt\": \"2025-07-31T16:47:19.912Z\",\n            \"paymentStatus\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"rejectedDrivers\": [\n                {\n                    \"driverId\": \"688b912e6bc6d2713f5d1bb6\",\n                    \"rejectReason\": \"Going back to home\",\n                    \"_id\": \"688b9e636c2da76171bf010e\"\n                }\n            ],\n            \"createdAt\": \"2025-07-31T16:47:19.919Z\",\n            \"updatedAt\": \"2025-07-31T16:49:14.409Z\",\n            \"__v\": 0,\n            \"cancellationReason\": \"Change of plans, no longer need the ride\",\n            \"cancelledAt\": \"2025-07-31T16:49:14.409Z\",\n            \"cancelledBy\": \"rider\"\n        },\n        {\n            \"fare\": {\n                \"baseFare\": 50,\n                \"distanceFare\": 225,\n                \"totalFare\": 275,\n                \"currency\": \"BDT\"\n            },\n            \"_id\": \"688b9e9d6c2da76171bf0119\",\n            \"riderId\": \"688b90c86bc6d2713f5d1bb2\",\n            \"driverId\": \"688b912e6bc6d2713f5d1bb6\",\n            \"pickupLocation\": \"Uttora, Dhaka\",\n            \"destinationLocation\": \"Mirpur, Dhaka\",\n            \"estimatedDistance\": 15,\n            \"status\": \"completed\",\n            \"requestedAt\": \"2025-07-31T16:49:33.339Z\",\n            \"paymentStatus\": \"completed\",\n            \"paymentMethod\": \"cash\",\n            \"rejectedDrivers\": [],\n            \"createdAt\": \"2025-07-31T16:49:33.340Z\",\n            \"updatedAt\": \"2025-07-31T16:53:16.819Z\",\n            \"__v\": 0,\n            \"acceptedAt\": \"2025-07-31T16:51:57.781Z\",\n            \"pickedUpAt\": \"2025-07-31T16:52:54.859Z\",\n            \"completedAt\": \"2025-07-31T16:53:16.818Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "UPDATE DRIVER STATUS",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTNjNmJjNmQyNzEzZjVkMWJiYSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTgwMzA2LCJleHAiOjE3NTQwNjY3MDZ9.7xjcZObc2mvJ-UcX2VU8g5JSZ9JwTb_SJDPFwF6K6fE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"action\" : \"activate\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/admin/drivers/688b912e6bc6d2713f5d1bb6/status",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"admin",
+						"drivers",
+						"688b912e6bc6d2713f5d1bb6",
+						"status"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UPDATE DRIVER STATUS",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTNjNmJjNmQyNzEzZjVkMWJiYSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTgwMzA2LCJleHAiOjE3NTQwNjY3MDZ9.7xjcZObc2mvJ-UcX2VU8g5JSZ9JwTb_SJDPFwF6K6fE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"action\" : \"approve\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/drivers/688b912e6bc6d2713f5d1bb6/status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"drivers",
+								"688b912e6bc6d2713f5d1bb6",
+								"status"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "472"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d8-KnJiiuvxREqWwBvhx4Q4MQ9UsJc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 16:45:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Driver status updated successfully\",\n    \"data\": {\n        \"driver\": {\n            \"_id\": \"688b912e6bc6d2713f5d1bb6\",\n            \"name\": \"Driver Jhon\",\n            \"email\": \"rider@gmail.com\",\n            \"phone\": \"01841151825\",\n            \"role\": \"driver\",\n            \"isActive\": true,\n            \"isBlocked\": false,\n            \"driverInfo\": {\n                \"vehicleType\": \"car\",\n                \"isApproved\": true,\n                \"isSuspended\": false,\n                \"isOnline\": false,\n                \"totalEarnings\": 0,\n                \"totalRides\": 0,\n                \"rating\": 5\n            },\n            \"createdAt\": \"2025-07-31T15:52:14.422Z\",\n            \"updatedAt\": \"2025-07-31T16:45:53.778Z\",\n            \"__v\": 0\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "UPDATE USER STATUS",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGE4NjY3MTg4MWIzNTFkOTVkOWIwNCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTEzOTQ2LCJleHAiOjE3NTQwMDAzNDZ9.tYrT3tP8qOPFj895m1m3ey2BCIju1QFW_gZvt2DZons",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"action\" : \"unblock\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/admin/users/688a86211881b351d95d9afc/status",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"admin",
+						"users",
+						"688a86211881b351d95d9afc",
+						"status"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UPDATE USER STATUS",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGE4NjY3MTg4MWIzNTFkOTVkOWIwNCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTEzOTQ2LCJleHAiOjE3NTQwMDAzNDZ9.tYrT3tP8qOPFj895m1m3ey2BCIju1QFW_gZvt2DZons",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"action\" : \"block\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/users/688b90c86bc6d2713f5d1bb2/status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								"688b90c86bc6d2713f5d1bb2",
+								"status"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "403"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"193-GiWRAIQ7fABkrnhnTQtxJFXKnCA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 16:58:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User status updated successfully\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"688b90c86bc6d2713f5d1bb2\",\n            \"name\": \"Shorno Kamal Roy\",\n            \"email\": \"fb.shorno@gmail.com\",\n            \"phone\": \"01841151827\",\n            \"role\": \"rider\",\n            \"isActive\": true,\n            \"isBlocked\": true,\n            \"createdAt\": \"2025-07-31T15:50:32.615Z\",\n            \"updatedAt\": \"2025-07-31T16:58:54.957Z\",\n            \"__v\": 0,\n            \"riderInfo\": {\n                \"cancelCount\": 2,\n                \"preferredPaymentMethod\": \"cash\"\n            }\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "REFRESH TOKEN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGE4NjY3MTg4MWIzNTFkOTVkOWIwNCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTEzOTQ2LCJleHAiOjE3NTQwMDAzNDZ9.tYrT3tP8qOPFj895m1m3ey2BCIju1QFW_gZvt2DZons",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/refresh-token",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"refresh-token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "REFRESH TOKEN",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGE4NjY3MTg4MWIzNTFkOTVkOWIwNCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTEzOTQ2LCJleHAiOjE3NTQwMDAzNDZ9.tYrT3tP8qOPFj895m1m3ey2BCIju1QFW_gZvt2DZons",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/refresh-token",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTNjNmJjNmQyNzEzZjVkMWJiYSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTgxMTY5LCJleHAiOjE3NTQwNjc1Njl9.ZXsRiG-SaNEbE2eTAjGbF4pDRFK1UVPHqU_GA36nQlw; Max-Age=2592000; Path=/; Expires=Sat, 30 Aug 2025 16:59:29 GMT; HttpOnly"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "332"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14c-f7FHTOuYrNhiz5FLdcfjcBfaB0Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 16:59:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Access token refreshed successfully\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTNjNmJjNmQyNzEzZjVkMWJiYSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTgxMTY5LCJleHAiOjE3NTQwNjc1Njl9.ZXsRiG-SaNEbE2eTAjGbF4pDRFK1UVPHqU_GA36nQlw\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "LOGOUT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGE4NjY3MTg4MWIzNTFkOTVkOWIwNCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTEzOTQ2LCJleHAiOjE3NTQwMDAzNDZ9.tYrT3tP8qOPFj895m1m3ey2BCIju1QFW_gZvt2DZons",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/logout",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "LOGOUT",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGE4NjY3MTg4MWIzNTFkOTVkOWIwNCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzOTEzOTQ2LCJleHAiOjE3NTQwMDAzNDZ9.tYrT3tP8qOPFj895m1m3ey2BCIju1QFW_gZvt2DZons",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "accessToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "refreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-bHqoSmfz6bNRe1abL/VxeuEnxLM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 16:59:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Logout successful\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "PASSWORD RESET",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGE4NjIxMTg4MWIzNTFkOTVkOWFmYyIsImVtYWlsIjoiZmIuc2hvcm5vQGdtYWlsLmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc1Mzk0Mjk0NiwiZXhwIjoxNzU0MDI5MzQ2fQ.OoRo__BqD1PHE7kSeXeceeU-ru9ZXEp6vBudHJGiHYk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldPassword\" :\"rider@pas-new\",\r\n    \"newPassword\" :\"rider@pass-new\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/reset-password",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"reset-password"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PASSWORD RESET",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI5MTJlNmJjNmQyNzEzZjVkMWJiNiIsImVtYWlsIjoicmlkZXJAZ21haWwuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzk4MTIzMiwiZXhwIjoxNzU0MDY3NjMyfQ.yuOFHo2dXL_Bjmxq3ND5fUy5cMiQ5kN0vNUFA7NT5BQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\" :\"driver@pass\",\r\n    \"newPassword\" :\"driver@pass-new\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/reset-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "83"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"53-yTFR7Rt4kgtHp+vI1dtOvoNJoVg\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 17:01:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Password reset successful\",\n    \"data\": null\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

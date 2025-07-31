@@ -60,15 +60,17 @@ export const logout = catchAsync(async (req, res, next) => {
 
 
 export const resetPassword = catchAsync(async (req, res, next) => {
-    const decodedToken = req.user;
+    const userId = req.user.id;
     const newPassword = req.body.newPassword;
     const oldPassword = req.body.oldPassword;
+
+    console.log(userId)
 
     if (!newPassword) {
         return next(new AppError(httpStatus.BAD_REQUEST, 'New password is required.'));
     }
 
-    await resetPasswordService(oldPassword, newPassword, decodedToken);
+    await resetPasswordService(oldPassword, newPassword, userId);
 
 
     sendResponse(res, {
