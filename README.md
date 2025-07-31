@@ -2,6 +2,31 @@
 
 ---
 
+## Project Overview
+This project provides a RESTful API for a ride-sharing platform, allowing users to sign up, request rides, and manage their ride history. Drivers can accept or reject ride requests, and admins can manage users and drivers.
+
+## Features
+- User registration and authentication
+- Driver registration and authentication
+- Ride request, acceptance, and cancellation
+- Admin management for users and drivers
+- JWT-based authentication
+- Error handling and validation
+
+## Tech Stack
+- **Node.js** with **Express.js**
+- **TypeScript**
+- **MongoDB** with **Mongoose**
+- **JWT** for authentication
+- **Postman** for API testing
+
+---
+
+## Postman Collection
+[Live Postman Collection Link](https://documenter.getpostman.com/view/36492185/2sB3BAKX9D)
+
+---
+
 ## User Signup
 
 **Endpoint:** `POST /user/signup`
@@ -912,4 +937,3 @@ No body required.
 ```
 
 ---
-
